@@ -9,6 +9,12 @@ $(document).ready(function() {
   clouds.position.x = 200;
   clouds.position.y = 200;
   stage.addChild(clouds);
+  var text = new PIXI.Text("Welcome", {font:"50px Arial", dropShadow: true, fill:"white"});
+  text.anchor.x = 0.5;
+  text.anchor.y = 0.5;
+  text.position.x = 200;
+  text.position.y = -25;
+  stage.addChild(text);
   render();
   var count = 0;
   function render() {
@@ -26,6 +32,9 @@ $(document).ready(function() {
     count += .001;
     requestAnimationFrame(render);
     clouds.rotation += .001;
+    if (text.position.y < 350) {
+      text.position.y += 1;
+    }
     renderer.render(stage);
   }
 });
