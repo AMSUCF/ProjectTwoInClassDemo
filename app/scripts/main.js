@@ -30,7 +30,7 @@ $(document).ready(function() {
     filter.saturate(newValSat, false);
     stage.filters = [filter];
     count += .001;
-    requestAnimationFrame(render);
+  
     clouds.rotation += .001;
     if (text.position.y < 350) {
       text.position.y += 1;
